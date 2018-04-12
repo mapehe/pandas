@@ -1531,7 +1531,7 @@ class DatetimeIndex(DatelikeOps, TimelikeOps, DatetimeIndexOpsMixin,
         rhs_mask = (stamps <= t2.value) if use_rhs else True
 
         # try to find a the dates
-        return (lhs_mask & rhs_mask).nonzero()[0][0]
+        return (lhs_mask & rhs_mask).nonzero()[0]
 
     def _maybe_promote(self, other):
         if other.inferred_type == 'date':
